@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kỷ Niệm Lớp Giữa Thanh Xuân - Lưu Bút Tuổi Học Trò</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts hỗ trợ tiếng Việt mượt mà -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Dancing+Script:wght@600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <!-- Font Awesome cho icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --sun-yellow: #fbbf24;
+      --warm-gold: #f59e0b;
+      --pastel-pink: #ffe4e6;
+      --rose-pink: #fb7185;
+      --sky-blue: #e0f2fe;
+      --paper-cream: #fffdf7;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background: linear-gradient(180deg, #fffbeb 0%, #fff1f2 35%, #f0f9ff 70%, #fefce8 100%);
+      color: #334155;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    .font-handwriting {
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .font-note {
+      font-family: 'Patrick Hand', cursive;
+    }
+
+    /* ================= HIỆU ỨNG DÂY TREO PHÁT SÁNG VÀNG ẤM ================= */
+    .glowing-string-wrapper {
+      position: relative;
+      padding-top: 28px;
+    }
+
+    .glowing-wire {
+      position: absolute;
+      top: 18px;
+      left: -2%;
+      right: -2%;
+      height: 5px;
+      background: linear-gradient(90deg, #fde047, #f59e0b, #fef08a, #f59e0b, #fde047);
+      border-radius: 999px;
+      box-shadow:
+        0 0 10px rgba(251, 191, 36, 0.9),
+        0 0 22px rgba(245, 158, 11, 0.75),
+        0 0 36px rgba(253, 224, 71, 0.55);
+      z-index: 5;
+      animation: wirePulse 3.5s ease-in-out infinite alternate;
+    }
+
+    /* Đèn đom đóm nhỏ dọc theo dây treo */
+    .wire-bulbs {
+      position: absolute;
+      top: 13px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-around;
+      pointer-events: none;
+      z-index: 6;
+    }
+
+    .wire-bulb {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #fef9c3;
+      box-shadow: 0 0 12px 4px rgba(250, 204, 21, 0.85);
+      animation: bulbTwinkle 2.2s infinite alternate;
+    }
+
+    .wire-bulb:nth-child(even) {
+      animation-delay: 1.1s;
+    }
+
+    @keyframes wirePulse {
+      0% {
+        box-shadow: 0 0 8px rgba(251, 191, 36, 0.75), 0 0 18px rgba(245, 158, 11, 0.55);
+      }
+      100% {
+        box-shadow: 0 0 14px rgba(251, 191, 36, 1), 0 0 30px rgba(245, 158, 11, 0.85), 0 0 44px rgba(253, 224, 71, 0.65);
+      }
+    }
+
+    @keyframes bulbTwinkle {
+      0% { opacity: 0.65; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1.18); }
+    }
+
+    /* ================= HIỆU ỨNG KHUNG ẢNH ĐUNG ĐƯA THEO GIÓ ================= */
+    .polaroid-hanger {
+      transform-origin: top center;
+      animation: gentleBreeze 5.5s ease-in-out infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .polaroid-hanger:nth-child(2n) {
+      animation-duration: 6.4s;
+      animation-delay: -1.5s;
+    }
+
+    .polaroid-hanger:nth-child(3n) {
+      animation-duration: 5.8s;
+      animation-delay: -3.1s;
+    }
+
+    .polaroid-hanger:hover {
+      animation-play-state: paused;
+      transform: scale(1.03) rotate(0deg) !important;
+      z-index: 20;
+    }
+
+    @keyframes gentleBreeze {
+      0% { transform: rotate(-2.2deg); }
+      25% { transform: rotate(1.6deg); }
+      50% { transform: rotate(-1.4deg); }
+      75% { transform: rotate(2.3deg); }
+      100% { transform: rotate(-2.2deg); }
+    }
+
+    /* Kẹp gỗ treo ảnh */
+    .wooden-clip {
+      width: 18px;
+      height: 34px;
+      background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+      border-radius: 4px;
+      margin: -14px auto -6px auto;
+      position: relative;
+      z-index: 15;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.22);
+      border: 1px solid #92400e;
+    }
+
+    .wooden-clip::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 2px;
+      right: 2px;
+      height: 2px;
+      background: #78350f;
+    }
+
+    /* Tỷ lệ khung ảnh chuẩn 16:9 */
+    .aspect-16-9 {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* ================= HIỆU ỨNG LÁ THƯ MỞ RA & GIẤY VIẾT THƯ ================= */
+    .letter-paper {
+      background-color: #fffdf7;
+      background-image:
+        radial-gradient(#fed7aa 0.85px, transparent 0.85px),
+        linear-gradient(to bottom, transparent 95%, rgba(251, 146, 60, 0.14) 96%);
+      background-size: 22px 22px, 100% 32px;
+      border: 3px dashed #fda4af;
+      box-shadow: 0 25px 50px -12px rgba(225, 29, 72, 0.25);
+      animation: letterOpen 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes letterOpen {
+      0% {
+        opacity: 0;
+        transform: scale(0.84) translateY(24px) rotate(-1deg);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0) rotate(0deg);
+      }
+    }
+
+    /* Sticker xoay nhẹ quanh lá thư */
+    .sticker-float {
+      animation: stickerBob 3.5s ease-in-out infinite alternate;
+      user-select: none;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.12));
+    }
+
+    @keyframes stickerBob {
+      0% { transform: translateY(0px) rotate(-6deg); }
+      100% { transform: translateY(-6px) rotate(6deg); }
+    }
+
+    /* ================= STICKER HOA HỒNG RƠI XUYÊN SUỐT TRANG ================= */
+    #rose-petal-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 45;
+      overflow: hidden;
+    }
+
+    .falling-rose {
+      position: absolute;
+      top: -50px;
+      user-select: none;
+      pointer-events: none;
+      will-change: transform;
+      animation-name: fallAndSway;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes fallAndSway {
+      0% {
+        transform: translateY(-5vh) translateX(0px) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.92;
+      }
+      50% {
+        transform: translateY(50vh) translateX(35px) rotate(180deg);
+      }
+      90% {
+        opacity: 0.85;
+      }
+      100% {
+        transform: translateY(108vh) translateX(-25px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Tùy chỉnh thanh cuộn */
+    ::-webkit-scrollbar {
+      width: 9px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fff1f2;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #fb7185, #fbbf24);
+      border-radius: 999px;
+    }
+  </style>
+</head>
+<body class="relative">
+
+  <!-- Container Sticker Bông Hoa Hồng Rơi Xuyên Suốt Trang -->
+  <div id="rose-petal-container" aria-hidden="true"></div>
+
+  <!-- Thông báo Toast (Thay thế alert) -->
+  <div id="toast-box" class="fixed top-5 right-5 z-[100] flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- =====================================================================
+       MÀN HÌNH ĐĂNG NHẬP & ĐĂNG KÝ (AUTH OVERLAY)
+       ===================================================================== -->
+  <div id="auth-screen" class="fixed inset-0 z-[80] flex items-center justify-center p-4 bg-gradient-to-br from-amber-100 via-rose-100 to-sky-100 overflow-y-auto">
+    <!-- Trang trí hoa lá góc -->
+    <div class="absolute top-6 left-8 text-5xl opacity-40 animate-bounce pointer-events-none">🌹</div>
+    <div class="absolute bottom-8 right-10 text-5xl opacity-40 animate-pulse pointer-events-none">🎒</div>
+    <div class="absolute top-16 right-16 text-4xl opacity-40 pointer-events-none">✨</div>
+
+    <div class="w-full max-w-md bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl border-2 border-amber-200 p-6 sm:p-8 relative z-10">
+      <div class="text-center mb-6">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-rose-400 to-amber-400 text-white text-3xl shadow-lg mb-3">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <h1 class="font-handwriting text-4xl font-bold text-rose-600">Kỷ Niệm Lớp Giữa Thanh Xuân</h1>
+        <p class="text-sm text-slate-500 mt-1">Đăng nhập hoặc tạo tài khoản để lưu giữ & chỉnh sửa ký ức tuổi học trò vĩnh viễn</p>
+      </div>
+
+      <!-- Tabs Chuyển Đăng nhập / Đăng ký -->
+      <div class="grid grid-cols-2 gap-2 p-1.5 bg-amber-50 rounded-2xl mb-6 border border-amber-200/70">
+        <button id="tab-login" onclick="switchAuthTab('login')" class="py-2.5 rounded-xl font-bold text-sm transition-all bg-gradient-to-r from-rose-500 to-amber-500 text-white shadow">
+          Đăng Nhập
+        </button>
+        <button id="tab-register" onclick="switchAuthTab('register')" class="py-2.5 rounded-xl font-bold text-sm transition-all text-slate-600 hover:text-rose-600">
+          Đăng Ký Mới
+        </button>
+      </div>
+
+      <!-- Form Đăng Nhập -->
+      <form id="login-form" onsubmit="handleLogin(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Tên đăng nhập</label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-3.5 flex items-center text-rose-400"><i class="fa-solid fa-user"></i></span>
+            <input type="text" id="login-username" required placeholder="Nhập tên đăng nhập..." value="thanhxuan12a1"
+              class="w-full pl-10 pr-4 py-3 rounded-xl border border-rose-200 focus:outline-none focus:ring-2 focus:ring-rose-400 bg-rose-50/30 text-slate-800 font-medium" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Mật khẩu</label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-3.5 flex items-center text-rose-400"><i class="fa-solid fa-lock"></i></span>
+            <input type="password" id="login-password" required placeholder="Nhập mật khẩu..." value="123456"
+              class="w-full pl-10 pr-4 py-3 rounded-xl border border-rose-200 focus:outline-none focus:ring-2 focus:ring-rose-400 bg-rose-50/30 text-slate-800 font-medium" />
+          </div>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-800 flex items-start gap-2">
+          <i class="fa-solid fa-sparkles text-amber-500 mt-0.5"></i>
+          <div>
+            <strong>Tài khoản trải nghiệm sẵn:</strong> Tên ĐN: <code class="bg-white px-1.5 py-0.5 rounded font-bold">thanhxuan12a1</code> | MK: <code class="bg-white px-1.5 py-0.5 rounded font-bold">123456</code> (Hoặc bấm Đăng ký mới).
+          </div>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-rose-500 via-pink-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-bold shadow-lg shadow-rose-200 transition transform active:scale-98 flex items-center justify-center gap-2">
+          <span>Vào Trang Kỷ Niệm</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+
+      <!-- Form Đăng Ký -->
+      <form id="register-form" onsubmit="handleRegister(event)" class="space-y-4 hidden">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Tên hiển thị / Biệt danh lớp</label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-3.5 flex items-center text-amber-500"><i class="fa-solid fa-face-smile"></i></span>
+            <input type="text" id="reg-fullname" required placeholder="VD: Lớp Trưởng 12A1"
+              class="w-full pl-10 pr-4 py-3 rounded-xl border border-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-400 bg-amber-50/30 text-slate-800" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Tên đăng nhập</label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-3.5 flex items-center text-amber-500"><i class="fa-solid fa-at"></i></span>
+            <input type="text" id="reg-username" required placeholder="VD: lop12a1_k24"
+              class="w-full pl-10 pr-4 py-3 rounded-xl border border-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-400 bg-amber-50/30 text-slate-800" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Mật khẩu</label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-3.5 flex items-center text-amber-500"><i class="fa-solid fa-key"></i></span>
+            <input type="password" id="reg-password" required placeholder="Tạo mật khẩu..."
+              class="w-full pl-10 pr-4 py-3 rounded-xl border border-amber-200 focus:outline-none focus:ring-2 focus:ring-amber-400 bg-amber-50/30 text-slate-800" />
+          </div>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white font-bold shadow-lg shadow-amber-200 transition transform active:scale-98 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-user-plus"></i>
+          <span>Đăng Ký & Mở Trang Lưu Bút</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       GIAO DIỆN CHÍNH CỦA WEBSITE (HIỆN SAU KHI ĐĂNG NHẬP)
+       ===================================================================== -->
+  <div id="main-app" class="hidden">
+
+    <!-- Thanh Điều Hướng Nổi (Top Navbar) -->
+    <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-amber-200/80 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3">
+        <!-- Logo & Tên Web -->
+        <a href="#hero-section" class="flex items-center gap-2.5 group">
+          <span class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500 to-amber-400 text-white flex items-center justify-center text-xl shadow group-hover:rotate-6 transition">
+            🌸
+          </span>
+          <div>
+            <span class="font-handwriting text-2xl sm:text-3xl font-bold bg-gradient-to-r from-rose-600 to-amber-600 bg-clip-text text-transparent block leading-none">
+              Kỷ Niệm Lớp Giữa Thanh Xuân
+            </span>
+            <span class="text-[11px] text-slate-500 font-medium hidden sm:inline">Tự động lưu vĩnh viễn mọi chỉnh sửa</span>
+          </div>
+        </a>
+
+        <!-- Liên kết nhanh các khối lớp -->
+        <nav class="hidden lg:flex items-center gap-2 bg-amber-50/90 px-3 py-1.5 rounded-full border border-amber-200">
+          <a href="#grade-10" class="px-3 py-1 rounded-full text-sm font-bold text-amber-800 hover:bg-amber-200/70 transition">Khối 10</a>
+          <a href="#grade-11" class="px-3 py-1 rounded-full text-sm font-bold text-rose-700 hover:bg-rose-200/70 transition">Khối 11</a>
+          <a href="#grade-12" class="px-3 py-1 rounded-full text-sm font-bold text-sky-700 hover:bg-sky-200/70 transition">Khối 12</a>
+          <a href="#class-message-section" class="px-3 py-1 rounded-full text-sm font-bold text-emerald-700 hover:bg-emerald-200/70 transition">Lời Nhắn Tập Thể</a>
+        </nav>
+
+        <!-- Công cụ Người dùng & Trạng thái Lưu -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <span id="save-badge" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-semibold">
+            <i class="fa-solid fa-cloud-check text-emerald-500"></i> Đã lưu
+          </span>
+
+          <div class="flex items-center gap-2 bg-rose-50 px-3 py-1.5 rounded-full border border-rose-200">
+            <i class="fa-solid fa-circle-user text-rose-500"></i>
+            <span id="current-user-label" class="text-xs sm:text-sm font-bold text-rose-800 max-w-[110px] truncate">Thành viên</span>
+          </div>
+
+          <button onclick="handleLogout()" title="Đăng xuất tài khoản" class="px-3 py-2 rounded-xl bg-slate-100 hover:bg-rose-100 text-slate-700 hover:text-rose-600 text-xs sm:text-sm font-bold transition flex items-center gap-1.5">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="hidden md:inline">Đăng xuất</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =====================================================================
+         1. TRANG ĐẦU (HERO SECTION) - ẢNH TẬP THỂ LỚP & NÚT THAY ẢNH/THÔNG TIN
+         ===================================================================== -->
+    <section id="hero-section" class="relative w-full min-h-[82vh] flex items-center justify-center overflow-hidden">
+      <!-- Ảnh nền tập thể lớp -->
+      <img id="hero-bg-img"
+           src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1920&q=85"
+           onerror="this.src='https://placehold.co/1920x1080/fde68a/92400e?text=Anh+Tap+The+Lop+Thanh+Xuan'"
+           alt="Ảnh tập thể lớp"
+           class="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 scale-105" />
+
+      <!-- Lớp phủ ánh nắng ấm áp để chữ luôn rõ đẹp -->
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-900/45 via-rose-950/35 to-amber-950/65"></div>
+
+      <!-- Nút Riêng Thay Ảnh Nền & Thông Tin Trang Chủ -->
+      <button onclick="openHeroEditor()"
+        class="absolute top-5 right-5 z-20 px-4 py-2.5 rounded-2xl bg-white/95 hover:bg-amber-400 text-slate-800 hover:text-white font-bold text-xs sm:text-sm shadow-xl border-2 border-amber-300 transition transform hover:scale-105 flex items-center gap-2">
+        <i class="fa-solid fa-camera-rotate text-rose-500"></i>
+        <span>Thay Ảnh Nền & Tiêu Đề</span>
+      </button>
+
+      <!-- Nội dung chính giữa Hero -->
+      <div class="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/40 text-amber-200 text-xs sm:text-sm font-bold mb-5 shadow">
+          <span>🌻</span>
+          <span id="hero-school-tag">NIÊN KHÓA THANH XUÂN RỰC RỠ • LƯU BÚT TUỔI HỌC TRÒ</span>
+          <span>🌻</span>
+        </div>
+
+        <h1 id="hero-main-title" class="font-handwriting text-5xl sm:text-7xl md:text-8xl font-bold text-amber-200 drop-shadow-[0_5px_15px_rgba(0,0,0,0.55)] leading-tight mb-4">
+          Kỷ Niệm Lớp Giữa Thanh Xuân
+        </h1>
+
+        <p id="hero-subtitle" class="text-base sm:text-xl md:text-2xl text-white/95 font-medium max-w-2xl mx-auto leading-relaxed drop-shadow mb-8">
+          Nơi lưu giữ từng nụ cười rạng rỡ, những trang lưu bút mực tím và thanh xuân tươi đẹp nhất của chúng ta dưới mái trường thân yêu.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="#grade-10" class="px-7 py-3.5 rounded-full bg-gradient-to-r from-amber-400 to-rose-500 hover:from-amber-500 hover:to-rose-600 text-white font-bold text-base shadow-xl shadow-rose-900/30 transition transform hover:-translate-y-1 flex items-center gap-2">
+            <span>Lướt Xem Dây Treo Kỷ Niệm</span>
+            <i class="fa-solid fa-angles-down animate-bounce"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Viền sóng mềm mại chuyển tiếp xuống khu vực dây treo ảnh -->
+      <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-10 sm:h-16 fill-[#fffbeb]">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.38,194.22,102.68,238.54,91,279.13,64.26,321.39,56.44Z"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         2. KHU VỰC DÂY TREO ẢNH KỶ NIỆM 3 KHỐI LỚP (10, 11, 12)
+         ===================================================================== -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+
+      <!-- Hướng dẫn nhanh cho người dùng -->
+      <div class="bg-white/90 backdrop-blur-sm border-2 border-amber-200 rounded-3xl p-4 sm:p-5 shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3 text-center sm:text-left">
+          <span class="text-3xl">💌</span>
+          <div>
+            <h2 class="font-bold text-slate-800 text-base sm:text-lg">Mẹo nhỏ khám phá & chỉnh sửa lưu bút:</h2>
+            <p class="text-xs sm:text-sm text-slate-600">
+              Bấm trực tiếp vào <strong>từng bức ảnh 16:9</strong> trên dây treo phát sáng để mở <strong>Lá Thư Kỷ Niệm</strong>. Bấm nút <span class="inline-block px-2 py-0.5 bg-amber-100 text-amber-800 rounded font-bold text-xs"><i class="fa-solid fa-pen-to-square"></i> Sửa</span> trên mỗi ảnh để thay ảnh & nội dung!
+            </p>
+          </div>
+        </div>
+        <button onclick="resetDefaultDataConfirm()" class="shrink-0 px-4 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 border border-rose-200 text-xs font-bold transition">
+          <i class="fa-solid fa-rotate-left mr-1"></i> Khôi phục mẫu gốc
+        </button>
+      </div>
+
+      <!-- Container render động 3 khối lớp: Khối 10, Khối 11, Khối 12 -->
+      <div id="grades-container" class="space-y-28"></div>
+
+      <!-- =====================================================================
+           3. PHẦN NHẮN GỬI ĐẾN TẬP THỂ LỚP (CUỐI TRANG)
+           ===================================================================== -->
+      <section id="class-message-section" class="pt-8 pb-16">
+        <div class="relative max-w-4xl mx-auto bg-gradient-to-br from-amber-50 via-white to-rose-50 rounded-[2rem] border-4 border-amber-300/90 p-6 sm:p-12 shadow-2xl">
+          <!-- Các sticker trang trí góc -->
+          <span class="absolute -top-6 -left-4 text-4xl sm:text-5xl sticker-float">🌹</span>
+          <span class="absolute -top-6 -right-4 text-4xl sm:text-5xl sticker-float" style="animation-delay: 0.8s;">🎓</span>
+          <span class="absolute -bottom-5 left-8 text-3xl sm:text-4xl sticker-float" style="animation-delay: 1.4s;">📖</span>
+          <span class="absolute -bottom-5 right-8 text-3xl sm:text-4xl sticker-float" style="animation-delay: 2s;">✒️</span>
+
+          <!-- Nút chỉnh sửa riêng phần Lời nhắn tập thể lớp -->
+          <button onclick="openCollectiveMessageEditor()"
+            class="sm:absolute top-6 right-6 mb-4 sm:mb-0 px-4 py-2 rounded-xl bg-amber-400 hover:bg-amber-500 text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center gap-2">
+            <i class="fa-solid fa-pen-nib"></i>
+            <span>Sửa Lời Nhắn Tập Thể</span>
+          </button>
+
+          <div class="text-center mb-6">
+            <span class="inline-block px-4 py-1 rounded-full bg-rose-100 text-rose-600 font-bold text-xs uppercase tracking-widest mb-2">
+              Trang Cuối Lưu Bút
+            </span>
+            <h2 id="collective-title" class="font-handwriting text-4xl sm:text-6xl font-bold text-rose-600">
+              Lời Nhắn Gửi Đến Tập Thể Lớp Thân Yêu
+            </h2>
+          </div>
+
+          <div class="bg-white/80 rounded-2xl p-6 sm:p-8 border border-rose-200/80 shadow-inner">
+            <p id="collective-body" class="font-note text-xl sm:text-2xl text-slate-700 leading-relaxed whitespace-pre-line">
+              Ba năm cấp ba trôi qua nhanh như một cái chớp mắt. Từ những ngày đầu bỡ ngỡ bước vào lớp 10, cùng nhau trải qua những kỳ thi căng thẳng của lớp 11, cho đến những ngày cuối cùng của năm lớp 12 đầy lưu luyến...
+
+              Cảm ơn tất cả các thành viên của đại gia đình chúng ta đã cùng nhau tạo nên một thanh xuân rực rỡ, hồn nhiên và đáng nhớ nhất. Dù sau này mỗi người một phương trời, chúc cho tất cả chúng ta luôn giữ mãi nụ cười trên môi, vững bước trên con đường mình chọn và mãi nhớ về nhau như những người bạn tuyệt vời nhất!
+            </p>
+
+            <div class="mt-6 pt-4 border-t border-dashed border-amber-300 flex flex-col sm:flex-row items-center justify-between gap-2 text-rose-600">
+              <span class="text-sm font-semibold italic">✨ Mãi là một gia đình - Thanh xuân không bao giờ phai ✨</span>
+              <span id="collective-signature" class="font-handwriting text-2xl sm:text-3xl font-bold">— Tập thể lớp mãi bên nhau —</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white/90 border-t border-amber-200 py-6 text-center text-sm text-slate-500">
+      <p class="font-semibold text-slate-700">🌸 Kỷ Niệm Lớp Giữa Thanh Xuân — Lưu Giữ Ký Ức Tuổi Học Trò 🌸</p>
+      <p class="text-xs mt-1">Mọi hình ảnh và lời nhắn của bạn đều được tự động lưu an toàn trên trình duyệt - Website Xây Dựng Bởi Trần Long Hồ</p>
+    </footer>
+  </div>
+
+  <!-- =====================================================================
+       TRÌNH PHÁT NHẠC NỀN THANH XUÂN (FLOATING MUSIC PLAYER)
+       ===================================================================== -->
+  <div id="music-widget" class="fixed bottom-5 right-5 z-[60] flex items-center gap-2 bg-white/95 backdrop-blur-md border-2 border-rose-300 rounded-full px-3.5 py-2 shadow-xl">
+    <button id="music-toggle-btn" onclick="toggleYouthMusic()"
+      class="w-10 h-10 rounded-full bg-gradient-to-tr from-rose-500 to-amber-400 text-white flex items-center justify-center shadow hover:scale-105 transition"
+      title="Bật / Tắt nhạc thanh xuân">
+      <i id="music-icon" class="fa-solid fa-play"></i>
+    </button>
+    <div class="pr-1">
+      <div class="flex items-center gap-1.5">
+        <span id="music-disc" class="text-sm">🎵</span>
+        <span id="music-track-name" class="text-xs font-bold text-slate-800 max-w-[135px] truncate">Giai Điệu Thanh Xuân</span>
+      </div>
+      <div class="flex items-center gap-2 mt-0.5">
+        <button onclick="switchYouthTrack()" class="text-[11px] font-semibold text-rose-600 hover:underline">
+          Đổi giai điệu ↻
+        </button>
+        <span id="music-status-text" class="text-[10px] text-slate-400">Đang tạm dừng</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MODAL 1: LÁ THƯ KỶ NIỆM KHI BẤM VÀO ẢNH TRÊN DÂY TREO
+       ===================================================================== -->
+  <div id="letter-modal" class="fixed inset-0 z-[70] hidden items-center justify-center p-3 sm:p-6 bg-slate-900/65 backdrop-blur-sm overflow-y-auto" onclick="closeModalOnBackdrop(event, 'letter-modal')">
+    <div class="relative w-full max-w-2xl letter-paper rounded-3xl p-6 sm:p-10 my-auto">
+
+      <!-- Bộ Sticker Quyển Sách, Cây Bút, Bông Hoa Trải Dài Xung Quanh Lá Thư -->
+      <span class="absolute -top-5 left-6 text-3xl sm:text-4xl sticker-float" title="Sách lưu bút">📖</span>
+      <span class="absolute -top-6 left-1/3 text-2xl sm:text-3xl sticker-float" style="animation-delay: 0.4s;">🌸</span>
+      <span class="absolute -top-5 right-1/3 text-3xl sm:text-4xl sticker-float" style="animation-delay: 0.9s;">✒️</span>
+      <span class="absolute -top-5 right-14 text-3xl sm:text-4xl sticker-float" style="animation-delay: 1.3s;">🌹</span>
+
+      <span class="hidden sm:inline absolute top-1/4 -left-5 text-3xl sticker-float" style="animation-delay: 0.6s;">📚</span>
+      <span class="hidden sm:inline absolute bottom-1/4 -left-5 text-3xl sticker-float" style="animation-delay: 1.5s;">🌺</span>
+      <span class="hidden sm:inline absolute top-1/3 -right-5 text-3xl sticker-float" style="animation-delay: 0.3s;">🖊️</span>
+      <span class="hidden sm:inline absolute bottom-1/3 -right-5 text-3xl sticker-float" style="animation-delay: 1.1s;">🌼</span>
+
+      <span class="absolute -bottom-5 left-8 text-3xl sm:text-4xl sticker-float" style="animation-delay: 0.7s;">🌷</span>
+      <span class="absolute -bottom-5 left-1/3 text-2xl sm:text-3xl sticker-float" style="animation-delay: 1.6s;">📓</span>
+      <span class="absolute -bottom-5 right-1/3 text-3xl sm:text-4xl sticker-float" style="animation-delay: 0.2s;">✏️</span>
+      <span class="absolute -bottom-5 right-8 text-3xl sm:text-4xl sticker-float" style="animation-delay: 1.2s;">💐</span>
+
+      <!-- Nút Đóng Lá Thư -->
+      <button onclick="closeModal('letter-modal')" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-rose-100 hover:bg-rose-500 text-rose-600 hover:text-white flex items-center justify-center font-bold transition shadow">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Tiêu đề Lá Thư -->
+      <div class="text-center border-b-2 border-dashed border-rose-200 pb-4 mb-5">
+        <span id="letter-grade-badge" class="inline-block px-3.5 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-extrabold uppercase tracking-wider mb-1">
+          Kỷ Niệm Khối 10
+        </span>
+        <h3 id="letter-title" class="font-handwriting text-3xl sm:text-5xl font-bold text-rose-600">
+          Ngày Đầu Tựu Trường
+        </h3>
+      </div>
+
+      <!-- Ảnh Kỷ Niệm 16:9 Thu Nhỏ Trong Thư -->
+      <div class="aspect-16-9 rounded-2xl overflow-hidden border-4 border-white shadow-lg mb-5">
+        <img id="letter-photo" src="" alt="Ảnh kỷ niệm" class="w-full h-full object-cover" />
+      </div>
+
+      <!-- Bảng Thông Tin Chi Tiết Lớp Học -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-amber-50/90 border border-amber-200 rounded-2xl p-4 mb-5 text-sm">
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center shrink-0"><i class="fa-solid fa-chalkboard-user"></i></span>
+          <div>
+            <span class="text-xs text-slate-500 block">Tập thể lớp:</span>
+            <strong id="letter-class-name" class="text-slate-800 text-base">Lớp 10A1</strong>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center shrink-0"><i class="fa-solid fa-user-tie"></i></span>
+          <div>
+            <span class="text-xs text-slate-500 block">Giáo viên chủ nhiệm:</span>
+            <strong id="letter-teacher" class="text-slate-800 text-base">Cô Nguyễn Thị Lan</strong>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center shrink-0"><i class="fa-solid fa-calendar-days"></i></span>
+          <div>
+            <span class="text-xs text-slate-500 block">Niên khóa:</span>
+            <strong id="letter-year" class="text-slate-800 text-base">2023 - 2026</strong>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2.5">
+          <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0"><i class="fa-solid fa-users"></i></span>
+          <div>
+            <span class="text-xs text-slate-500 block">Sĩ số thành viên:</span>
+            <strong id="letter-members" class="text-slate-800 text-base">42 thành viên</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nội dung Nhắn Gửi Ở Cuối Lá Thư -->
+      <div class="bg-white/90 rounded-2xl p-4 sm:p-5 border border-rose-200 relative">
+        <div class="text-xs font-bold uppercase tracking-wider text-rose-500 mb-1.5 flex items-center gap-1.5">
+          <i class="fa-solid fa-envelope-open-text"></i>
+          <span>Lời nhắn gửi kỷ niệm:</span>
+        </div>
+        <p id="letter-message" class="font-note text-xl text-slate-700 leading-relaxed whitespace-pre-line">
+          Nội dung lời nhắn gửi...
+        </p>
+      </div>
+
+      <!-- Thanh Nút Chỉnh Sửa Nhanh Trong Lá Thư -->
+      <div class="mt-6 flex flex-wrap items-center justify-between gap-3">
+        <button id="letter-edit-btn" class="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-white font-bold text-sm shadow transition flex items-center gap-2">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <span>Chỉnh Sửa Ảnh & Lá Thư Này</span>
+        </button>
+
+        <button onclick="closeModal('letter-modal')" class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm transition">
+          Gấp Lá Thư Lại
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MODAL 2: CHỈNH SỬA ẢNH & THÔNG TIN TRÊN DÂY TREO / THÊM ẢNH MỚI
+       ===================================================================== -->
+  <div id="photo-editor-modal" class="fixed inset-0 z-[75] hidden items-center justify-center p-4 bg-slate-900/65 backdrop-blur-sm overflow-y-auto" onclick="closeModalOnBackdrop(event, 'photo-editor-modal')">
+    <div class="w-full max-w-xl bg-white rounded-3xl border-2 border-amber-300 p-6 sm:p-8 shadow-2xl my-auto">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
+        <h3 id="photo-editor-heading" class="font-bold text-xl text-slate-800 flex items-center gap-2">
+          <i class="fa-solid fa-image text-rose-500"></i>
+          <span>Chỉnh Sửa Khung Ảnh & Lá Thư</span>
+        </h3>
+        <button onclick="closeModal('photo-editor-modal')" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-rose-100 text-slate-600 hover:text-rose-600 flex items-center justify-center">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form onsubmit="savePhotoEdit(event)" class="space-y-4">
+        <input type="hidden" id="edit-grade-id" />
+        <input type="hidden" id="edit-photo-id" />
+
+        <!-- Xem trước ảnh 16:9 -->
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-600 mb-1.5">Ảnh Kỷ Niệm (Tỷ lệ 16:9)</label>
+          <div class="aspect-16-9 rounded-2xl overflow-hidden border-2 border-amber-200 bg-slate-100 mb-2.5">
+            <img id="edit-photo-preview" src="" alt="Preview" class="w-full h-full object-cover" />
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <label class="cursor-pointer py-2.5 px-3 rounded-xl bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-700 font-bold text-xs flex items-center justify-center gap-2 transition">
+              <i class="fa-solid fa-upload"></i>
+              <span>Tải ảnh từ máy tính</span>
+              <input type="file" accept="image/*" onchange="handleFileUpload(event, 'edit-photo-url', 'edit-photo-preview')" class="hidden" />
+            </label>
+
+            <input type="text" id="edit-photo-url" placeholder="Hoặc dán đường dẫn (URL) ảnh..."
+              oninput="document.getElementById('edit-photo-preview').src = this.value"
+              class="py-2 px-3 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-amber-400" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-600 mb-1">Tên Lớp (hiện trên khung ảnh)</label>
+            <input type="text" id="edit-class-name" required placeholder="VD: Lớp 10A1"
+              class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-rose-400 focus:outline-none text-sm font-semibold" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-600 mb-1">Tên Kỷ Niệm (tiêu đề bức ảnh)</label>
+            <input type="text" id="edit-photo-title" required placeholder="VD: Ngày Đầu Tựu Trường"
+              class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-rose-400 focus:outline-none text-sm font-semibold" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-600 mb-1">Giáo Viên Chủ Nhiệm</label>
+            <input type="text" id="edit-teacher" required placeholder="VD: Cô Nguyễn Thị Lan"
+              class="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-400 focus:outline-none text-sm" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-600 mb-1">Niên Khóa</label>
+            <input type="text" id="edit-year" required placeholder="VD: 2023 - 2026"
+              class="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-400 focus:outline-none text-sm" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-600 mb-1">Số Thành Viên</label>
+            <input type="text" id="edit-members" required placeholder="VD: 42 thành viên"
+              class="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-amber-400 focus:outline-none text-sm" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-600 mb-1">Nội Dung Nhắn Gửi Ở Cuối Lá Thư</label>
+          <textarea id="edit-message" rows="4" required placeholder="Viết những dòng tâm sự, kỷ niệm đáng nhớ của bức ảnh này..."
+            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-rose-400 focus:outline-none text-sm leading-relaxed"></textarea>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+          <button type="button" id="delete-photo-btn" onclick="deleteCurrentPhoto()"
+            class="px-4 py-2.5 rounded-xl bg-red-50 hover:bg-red-500 text-red-600 hover:text-white font-bold text-xs transition flex items-center gap-1.5">
+            <i class="fa-solid fa-trash-can"></i>
+            <span>Xóa ảnh này</span>
+          </button>
+
+          <div class="flex items-center gap-2 ml-auto">
+            <button type="button" onclick="closeModal('photo-editor-modal')" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm">
+              Hủy
+            </button>
+            <button type="submit" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-rose-500 to-amber-500 text-white font-bold text-sm shadow-lg hover:opacity-95">
+              <i class="fa-solid fa-floppy-disk mr-1"></i> Lưu Thay Đổi
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MODAL 3: CHỈNH SỬA ẢNH NỀN & TIÊU ĐỀ TRANG CHỦ (HERO)
+       ===================================================================== -->
+  <div id="hero-editor-modal" class="fixed inset-0 z-[75] hidden items-center justify-center p-4 bg-slate-900/65 backdrop-blur-sm overflow-y-auto" onclick="closeModalOnBackdrop(event, 'hero-editor-modal')">
+    <div class="w-full max-w-lg bg-white rounded-3xl border-2 border-amber-300 p-6 sm:p-8 shadow-2xl my-auto">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
+        <h3 class="font-bold text-xl text-slate-800 flex items-center gap-2">
+          <i class="fa-solid fa-panorama text-amber-500"></i>
+          <span>Thay Ảnh Nền Tập Thể & Trang Chủ</span>
+        </h3>
+        <button onclick="closeModal('hero-editor-modal')" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-rose-100 text-slate-600 flex items-center justify-center">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form onsubmit="saveHeroEdit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-600 mb-1.5">Ảnh Nền Tập Thể Lớp</label>
+          <div class="aspect-16-9 rounded-2xl overflow-hidden border-2 border-amber-200 mb-2.5">
+            <img id="edit-hero-preview" src="" alt="Hero Preview" class="w-full h-full object-cover" />
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <label class="cursor-pointer py-2.5 px-3 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-800 font-bold text-xs flex items-center justify-center gap-2">
+              <i class="fa-solid fa-upload"></i>
+              <span>Chọn ảnh từ máy</span>
+              <input type="file" accept="image/*" onchange="handleFileUpload(event, 'edit-hero-url', 'edit-hero-preview')" class="hidden" />
+            </label>
+            <input type="text" id="edit-hero-url" placeholder="Hoặc dán link ảnh nền..."
+              oninput="document.getElementById('edit-hero-preview').src = this.value"
+              class="py-2 px-3 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-amber-400 focus:outline-none" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-600 mb-1">Dòng Tag Niên Khóa</label>
+          <input type="text" id="edit-hero-tag" required
+            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-600 mb-1">Tiêu Đề Chính Trang Chủ</label>
+          <input type="text" id="edit-hero-title" required
+            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm font-bold focus:ring-2 focus:ring-rose-400 focus:outline-none" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-600 mb-1">Lời Giới Thiệu Ngắn</label>
+          <textarea id="edit-hero-subtitle" rows="3" required
+            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-400 focus:outline-none"></textarea>
+        </div>
+
+        <div class="flex justify-end gap-2 pt-2">
+          <button type="button" onclick="closeModal('hero-editor-modal')" class="px-4 py-2.5 rounded-xl bg-slate-100 text-slate-700 font-bold text-sm">Hủy</button>
+          <button type="submit" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-rose-500 text-white font-bold text-sm shadow-lg">
+            Lưu Trang Chủ
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       MODAL 4: CHỈNH SỬA LỜI NHẮN GỬI TẬP THỂ LỚP (CUỐI TRANG)
+       ===================================================================== -->
+  <div id="collective-editor-modal" class="fixed inset-0 z-[75] hidden items-center justify-center p-4 bg-slate-900/65 backdrop-blur-sm overflow-y-auto" onclick="closeModalOnBackdrop(event, 'collective-editor-modal')">
+    <div class="w-full max-w-lg bg-white rounded-3xl border-2 border-rose-300 p-6 sm:p-8 shadow-2xl my-auto">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
+        <h3 class="font-bold text-xl text-slate-800 flex items-center gap-2">
+          <i class="fa-solid fa-heart text-rose-500"></i>
+          <span>Sửa Lời Nhắn Gửi Tập Thể Lớp</span>
+        </h3>
+        <button onclick="closeModal('collective-editor-modal')" class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form onsubmit="saveCollectiveMessage(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-600 mb-1">Tiêu Đề Lời Nhắn</label>
+          <input type="text" id="edit-collective-title" required
+            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm font-bold focus:ring-2 focus:ring-rose-400 focus:outline-none" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-600 mb-1">Nội Dung Nhắn Gửi Tập Thể Lớp</label>
+          <textarea id="edit-collective-body" rows="6" required
+            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm leading-relaxed focus:ring-2 focus:ring-rose-400 focus:outline-none"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-600 mb-1">Chữ Ký Cuối Trang</label>
+          <input type="text" id="edit-collective-sign" required
+            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-amber-400 focus:outline-none" />
+        </div>
+
+        <div class="flex justify-end gap-2 pt-2">
+          <button type="button" onclick="closeModal('collective-editor-modal')" class="px-4 py-2.5 rounded-xl bg-slate-100 text-slate-700 font-bold text-sm">Hủy</button>
+          <button type="submit" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-rose-500 to-amber-500 text-white font-bold text-sm shadow-lg">
+            Lưu Lời Nhắn
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       JAVASCRIPT LOGIC HOÀN CHỈNH (AUTH, LOCALSTORAGE, GALLERY, AUDIO, ROSES)
+       ===================================================================== -->
+  <script>
+    /* ---------------------------------------------------------------------
+       1. KHỞI TẠO DỮ LIỆU MẶC ĐỊNH & LƯU TRỮ LOCALSTORAGE VĨNH VIỄN
+       --------------------------------------------------------------------- */
+    const STORAGE_KEYS = {
+      USERS: 'tx_memory_users_v1',
+      SESSION: 'tx_memory_session_v1',
+      SITE_DATA: 'tx_memory_site_data_v1'
+    };
+
+    const DEFAULT_SITE_DATA = {
+      hero: {
+        bgUrl: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1920&q=85',
+        tag: 'NIÊN KHÓA THANH XUÂN RỰC RỠ • LƯU BÚT TUỔI HỌC TRÒ',
+        title: 'Kỷ Niệm Lớp Giữa Thanh Xuân',
+        subtitle: 'Nơi lưu giữ từng nụ cười rạng rỡ, những trang lưu bút mực tím và thanh xuân tươi đẹp nhất của chúng ta dưới mái trường thân yêu.'
+      },
+      grades: [
+        {
+          id: 'grade-10',
+          gradeLabel: 'Khối Lớp 10',
+          memoryTheme: 'Dây Treo Kỷ Niệm 1: Ngày Đầu Gặp Gỡ & Bỡ Ngỡ',
+          badgeColor: 'amber',
+          photos: [
+            {
+              id: 'p10-1',
+              className: 'Lớp 10A1',
+              title: 'Lễ Khai Giảng Đầu Tiên',
+              teacher: 'Cô Nguyễn Thị Lan',
+              year: '2023 - 2026',
+              members: '42 thành viên',
+              imageUrl: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1280&q=80',
+              message: 'Ngày đầu tiên bước chân vào ngôi trường mới, 42 gương mặt còn lạ lẫm nhưng ánh mắt ai cũng lấp lánh niềm vui. Chính từ khoảnh khắc này, hành trình thanh xuân rực rỡ của 10A1 chính thức bắt đầu!'
+            },
+            {
+              id: 'p10-2',
+              className: 'Lớp 10A1',
+              title: 'Hội Trại 26/3 Sôi Động',
+              teacher: 'Cô Nguyễn Thị Lan',
+              year: '2023 - 2026',
+              members: '42 thành viên',
+              imageUrl: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1280&q=80',
+              message: 'Cả lớp thức trắng đêm dựng cổng trại, tập văn nghệ và hò reo khản cả giọng. Lần đầu tiên chúng mình nhận ra: chỉ cần đoàn kết, 10A1 có thể làm nên mọi điều kỳ diệu!'
+            },
+            {
+              id: 'p10-3',
+              className: 'Lớp 10A1',
+              title: 'Giờ Ra Chơi Dưới Sân Trường',
+              teacher: 'Cô Nguyễn Thị Lan',
+              year: '2023 - 2026',
+              members: '42 thành viên',
+              imageUrl: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1280&q=80',
+              message: 'Những tiếng cười giòn tan dưới tán phượng vĩ, những ổ bánh mì chia đôi và những câu chuyện không hồi kết đã gắn kết chúng ta thành một gia đình thực thụ.'
+            }
+          ]
+        },
+        {
+          id: 'grade-11',
+          gradeLabel: 'Khối Lớp 11',
+          memoryTheme: 'Dây Treo Kỷ Niệm 2: Gắn Kết & Những Chuyến Đi Xa',
+          badgeColor: 'rose',
+          photos: [
+            {
+              id: 'p11-1',
+              className: 'Lớp 11A1',
+              title: 'Chuyến Dã Ngoại Thanh Xuân',
+              teacher: 'Thầy Trần Minh Hoàng',
+              year: '2023 - 2026',
+              members: '42 thành viên',
+              imageUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1280&q=80',
+              message: 'Chuyến xe đầy ắp tiếng hát và những trò đùa tinh nghịch của tuổi 17. Bức ảnh tập thể dưới nắng vàng hôm ấy là minh chứng cho tình bạn trong trẻo không gì thay thế được.'
+            },
+            {
+              id: 'p11-2',
+              className: 'Lớp 11A1',
+              title: 'Tri Ân Thầy Cô Ngày 20/11',
+              teacher: 'Thầy Trần Minh Hoàng',
+              year: '2023 - 2026',
+              members: '42 thành viên',
+              imageUrl: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1280&q=80',
+              message: 'Những bó hoa hồng tươi thắm cùng lời chúc chân thành gửi đến thầy chủ nhiệm và quý thầy cô. Cảm ơn thầy đã luôn kiên nhẫn, bao dung và dìu dắt tập thể 11A1 trưởng thành từng ngày.'
+            },
+            {
+              id: 'p11-3',
+              className: 'Lớp 11A1',
+              title: 'Cùng Nhau Ôn Thi Học Kỳ',
+              teacher: 'Thầy Trần Minh Hoàng',
+              year: '2023 - 2026',
+              members: '42 thành viên',
+              imageUrl: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1280&q=80',
+              message: 'Những buổi chiều ở lại lớp giải từng bài toán khó, chuyền tay nhau từng cuốn vở ghi chép cẩn thận. Áp lực thi cử bỗng hóa nhẹ tênh vì luôn có bạn bè kề bên!'
+            }
+          ]
+        },
+        {
+          id: 'grade-12',
+          gradeLabel: 'Khối Lớp 12',
+          memoryTheme: 'Dây Treo Kỷ Niệm 3: Mùa Kỷ Yếu & Ước Mơ Bay Cao',
+          badgeColor: 'sky',
+          photos: [
+            {
+              id: 'p12-1',
+              className: 'Lớp 12A1',
+              title: 'Bộ Ảnh Kỷ Yếu Áo Dài & Vest',
+              teacher: 'Cô Phạm Thu Hà',
+              year: '2023 - 2026',
+              members: '42 thành viên',
+              imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1280&q=80',
+              message: 'Khoác lên mình tà áo dài trắng tinh khôi và bộ vest trưởng thành, ai cũng rạng ngời như những ngôi sao sáng nhất. Giây phút tung mũ cử nhân lên bầu trời, tim mỗi đứa đều rưng rưng xúc động.'
+            },
+            {
+              id: 'p12-2',
+              className: 'Lớp 12A1',
+              title: 'Buổi Học Cuối Cùng Niên Khóa',
+              teacher: 'Cô Phạm Thu Hà',
+              year: '2023 - 2026',
+              members: '42 thành viên',
+              imageUrl: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1280&q=80',
+              message: 'Tiếng trống trường cuối cùng vang lên giữa mùa hoa phượng đỏ rực. Những dòng lưu bút viết vội lên áo trắng, những cái ôm thật chặt thay cho lời hẹn ngày gặp lại!'
+            },
+            {
+              id: 'p12-3',
+              className: 'Lớp 12A1',
+              title: 'Đêm Gala Tri Ân & Trưởng Thành',
+              teacher: 'Cô Phạm Thu Hà',
+              year: '2023 - 2026',
+              members: '42 thành viên',
+              imageUrl: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1280&q=80',
+              message: 'Ánh nến lung linh, những giọt nước mắt hạnh phúc và lời hứa sẽ luôn tự hào vì đã từng là một mảnh ghép của đại gia đình 12A1. Chúc tất cả chúng ta đỗ nguyện vọng 1 và tỏa sáng!'
+            }
+          ]
+        }
+      ],
+      collectiveMessage: {
+        title: 'Lời Nhắn Gửi Đến Tập Thể Lớp Thân Yêu',
+        body: 'Ba năm cấp ba trôi qua nhanh như một cái chớp mắt. Từ những ngày đầu bỡ ngỡ bước vào lớp 10, cùng nhau trải qua những kỳ thi căng thẳng của lớp 11, cho đến những ngày cuối cùng của năm lớp 12 đầy lưu luyến...\n\nCảm ơn tất cả các thành viên của đại gia đình chúng ta đã cùng nhau tạo nên một thanh xuân rực rỡ, hồn nhiên và đáng nhớ nhất. Dù sau này mỗi người một phương trời, chúc cho tất cả chúng ta luôn giữ mãi nụ cười trên môi, vững bước trên con đường mình chọn và mãi nhớ về nhau như những người bạn tuyệt vời nhất!',
+        signature: '— Tập thể lớp mãi bên nhau —'
+      }
+    };
+
+    let siteData = null;
+
+    function loadSiteData() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEYS.SITE_DATA);
+        if (saved) {
+          siteData = JSON.parse(saved);
+        } else {
+          siteData = JSON.parse(JSON.stringify(DEFAULT_SITE_DATA));
+          saveSiteData(false);
+        }
+      } catch (e) {
+        console.error('Lỗi đọc localStorage:', e);
+        siteData = JSON.parse(JSON.stringify(DEFAULT_SITE_DATA));
+      }
+    }
+
+    function saveSiteData(showNotice = true) {
+      try {
+        localStorage.setItem(STORAGE_KEYS.SITE_DATA, JSON.stringify(siteData));
+        const badge = document.getElementById('save-badge');
+        if (badge) {
+          badge.innerHTML = '<i class="fa-solid fa-check-circle text-emerald-500"></i> Đã lưu vĩnh viễn';
+        }
+        if (showNotice) {
+          showToast('Đã lưu thay đổi thành công!', 'success');
+        }
+      } catch (e) {
+        showToast('Bộ nhớ trình duyệt đầy (ảnh quá lớn). Hãy thử ảnh nhẹ hơn hoặc dùng link URL!', 'error');
+      }
+    }
+
+    /* ---------------------------------------------------------------------
+       2. HỆ THỐNG ĐĂNG KÝ & ĐĂNG NHẬP
+       --------------------------------------------------------------------- */
+    function initUsers() {
+      let users = [];
+      try {
+        users = JSON.parse(localStorage.getItem(STORAGE_KEYS.USERS)) || [];
+      } catch (e) {
+        users = [];
+      }
+      // Tạo sẵn tài khoản mẫu để người dùng vào trải nghiệm ngay hoặc tự đăng ký
+      if (!users.some(u => u.username === 'thanhxuan12a1')) {
+        users.push({
+          fullname: 'Thành Viên Thanh Xuân',
+          username: 'thanhxuan12a1',
+          password: '123456'
+        });
+        localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify(users));
+      }
+      return users;
+    }
+
+    function switchAuthTab(tab) {
+      const loginForm = document.getElementById('login-form');
+      const regForm = document.getElementById('register-form');
+      const tabLogin = document.getElementById('tab-login');
+      const tabReg = document.getElementById('tab-register');
+
+      if (tab === 'login') {
+        loginForm.classList.remove('hidden');
+        regForm.classList.add('hidden');
+        tabLogin.className = 'py-2.5 rounded-xl font-bold text-sm transition-all bg-gradient-to-r from-rose-500 to-amber-500 text-white shadow';
+        tabReg.className = 'py-2.5 rounded-xl font-bold text-sm transition-all text-slate-600 hover:text-rose-600';
+      } else {
+        loginForm.classList.add('hidden');
+        regForm.classList.remove('hidden');
+        tabReg.className = 'py-2.5 rounded-xl font-bold text-sm transition-all bg-gradient-to-r from-amber-500 to-rose-500 text-white shadow';
+        tabLogin.className = 'py-2.5 rounded-xl font-bold text-sm transition-all text-slate-600 hover:text-rose-600';
+      }
+    }
+
+    function handleRegister(e) {
+      e.preventDefault();
+      const fullname = document.getElementById('reg-fullname').value.trim();
+      const username = document.getElementById('reg-username').value.trim().toLowerCase();
+      const password = document.getElementById('reg-password').value;
+
+      if (!fullname || !username || !password) return;
+
+      const users = initUsers();
+      if (users.some(u => u.username === username)) {
+        showToast('Tên đăng nhập này đã tồn tại, hãy chọn tên khác nhé!', 'error');
+        return;
+      }
+
+      const newUser = { fullname, username, password };
+      users.push(newUser);
+      localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify(users));
+      localStorage.setItem(STORAGE_KEYS.SESSION, JSON.stringify(newUser));
+
+      showToast(`Chào mừng ${fullname} đến với Kỷ Niệm Thanh Xuân!`, 'success');
+      enterMainApp(newUser);
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const username = document.getElementById('login-username').value.trim().toLowerCase();
+      const password = document.getElementById('login-password').value;
+
+      const users = initUsers();
+      const found = users.find(u => u.username === username && u.password === password);
+
+      if (!found) {
+        showToast('Sai tên đăng nhập hoặc mật khẩu. Bạn có thể bấm "Đăng Ký Mới"!', 'error');
+        return;
+      }
+
+      localStorage.setItem(STORAGE_KEYS.SESSION, JSON.stringify(found));
+      showToast(`Đăng nhập thành công! Xin chào ${found.fullname}`, 'success');
+      enterMainApp(found);
+    }
+
+    function handleLogout() {
+      localStorage.removeItem(STORAGE_KEYS.SESSION);
+      document.getElementById('main-app').classList.add('hidden');
+      document.getElementById('auth-screen').classList.remove('hidden');
+      showToast('Đã đăng xuất. Mọi chỉnh sửa của bạn vẫn được lưu an toàn!', 'info');
+    }
+
+    function enterMainApp(user) {
+      document.getElementById('auth-screen').classList.add('hidden');
+      document.getElementById('main-app').classList.remove('hidden');
+      document.getElementById('current-user-label').textContent = user.fullname || user.username;
+      renderAll();
+    }
+
+    /* ---------------------------------------------------------------------
+       3. HIỂN THỊ DỮ LIỆU RA GIAO DIỆN (HERO, DÂY TREO 10-11-12, LỜI NHẮN)
+       --------------------------------------------------------------------- */
+    function renderAll() {
+      renderHero();
+      renderGrades();
+      renderCollectiveMessage();
+    }
+
+    function renderHero() {
+      const h = siteData.hero;
+      const bgEl = document.getElementById('hero-bg-img');
+      bgEl.src = h.bgUrl;
+      document.getElementById('hero-school-tag').textContent = h.tag;
+      document.getElementById('hero-main-title').textContent = h.title;
+      document.getElementById('hero-subtitle').textContent = h.subtitle;
+    }
+
+    function renderGrades() {
+      const container = document.getElementById('grades-container');
+      container.innerHTML = '';
+
+      const badgeStyles = {
+        amber: 'bg-amber-100 text-amber-800 border-amber-300',
+        rose: 'bg-rose-100 text-rose-700 border-rose-300',
+        sky: 'bg-sky-100 text-sky-700 border-sky-300'
+      };
+
+      siteData.grades.forEach((grade) => {
+        const badgeClass = badgeStyles[grade.badgeColor] || badgeStyles.amber;
+
+        const section = document.createElement('section');
+        section.id = grade.id;
+        section.className = 'scroll-mt-24';
+
+        // Header từng khối lớp (10, 11, 12)
+        let html = `
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+            <div>
+              <span class="inline-flex items-center gap-1.5 px-4 py-1 rounded-full border ${badgeClass} text-xs sm:text-sm font-extrabold uppercase tracking-wider mb-2 shadow-sm">
+                <i class="fa-solid fa-star text-amber-500"></i> ${escapeHtml(grade.gradeLabel)}
+              </span>
+              <h2 class="font-handwriting text-3xl sm:text-5xl font-bold text-slate-800">
+                ${escapeHtml(grade.memoryTheme)}
+              </h2>
+            </div>
+
+            <button onclick="openAddPhotoModal('${grade.id}')"
+              class="self-start sm:self-auto px-4 py-2.5 rounded-2xl bg-white hover:bg-amber-400 text-slate-800 hover:text-white border-2 border-amber-300 font-bold text-xs sm:text-sm shadow-md transition flex items-center gap-2">
+              <i class="fa-solid fa-plus-circle text-rose-500"></i>
+              <span>Thêm Ảnh Kỷ Niệm ${escapeHtml(grade.gradeLabel)}</span>
+            </button>
+          </div>
+
+          <!-- Dây Treo Ảnh Phát Sáng Vàng Ấm & Đung Đưa Theo Gió -->
+          <div class="glowing-string-wrapper">
+            <div class="glowing-wire"></div>
+            <div class="wire-bulbs">
+              <span class="wire-bulb"></span>
+              <span class="wire-bulb"></span>
+              <span class="wire-bulb"></span>
+              <span class="wire-bulb"></span>
+              <span class="wire-bulb"></span>
+              <span class="wire-bulb"></span>
+              <span class="wire-bulb"></span>
+              <span class="wire-bulb"></span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-2">
+        `;
+
+        grade.photos.forEach((photo) => {
+          html += `
+            <article class="polaroid-hanger relative group">
+              <!-- Kẹp gỗ kẹp lên dây phát sáng -->
+              <div class="wooden-clip" title="Kẹp gỗ treo ảnh"></div>
+
+              <!-- Khung ảnh Polaroid tỷ lệ 16:9 -->
+              <div class="bg-white rounded-2xl p-3.5 pb-4 shadow-xl border-2 border-amber-100 group-hover:border-amber-300 transition-all relative">
+                
+                <!-- Nút Chỉnh Sửa Riêng Từng Bức Ảnh -->
+                <button onclick="event.stopPropagation(); openPhotoEditor('${grade.id}', '${photo.id}')"
+                  title="Thay ảnh & sửa thông tin lá thư"
+                  class="absolute top-5 right-5 z-20 px-3 py-1.5 rounded-xl bg-white/95 hover:bg-amber-500 text-slate-800 hover:text-white text-xs font-bold shadow-md border border-amber-200 transition flex items-center gap-1">
+                  <i class="fa-solid fa-pen-to-square text-rose-500"></i>
+                  <span>Sửa</span>
+                </button>
+
+                <!-- Khung Hình 16:9 - Bấm vào để mở Lá Thư -->
+                <div onclick="openLetterModal('${grade.id}', '${photo.id}')"
+                  class="aspect-16-9 rounded-xl overflow-hidden bg-amber-50 relative cursor-pointer">
+                  <img src="${escapeHtml(photo.imageUrl)}"
+                       onerror="this.src='https://placehold.co/1280x720/fef3c7/b45309?text=Ky+Niem+Thanh+Xuan+16:9'"
+                       alt="${escapeHtml(photo.title)}"
+                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  
+                  <!-- Lớp gợi ý mở lá thư khi di chuột -->
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-80 group-hover:opacity-95 transition flex items-end justify-between p-3">
+                    <span class="px-2.5 py-1 rounded-lg bg-amber-400 text-slate-900 font-extrabold text-xs shadow">
+                      ${escapeHtml(photo.className)}
+                    </span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white/90 text-rose-600 font-bold text-xs shadow flex items-center gap-1">
+                      <i class="fa-solid fa-envelope-open-text"></i> Mở lá thư
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Thông tin dưới khung ảnh -->
+                <div onclick="openLetterModal('${grade.id}', '${photo.id}')" class="mt-3 cursor-pointer flex items-center justify-between gap-2">
+                  <div>
+                    <h3 class="font-bold text-slate-800 text-base sm:text-lg group-hover:text-rose-600 transition line-clamp-1">
+                      ${escapeHtml(photo.title)}
+                    </h3>
+                    <p class="text-xs text-slate-500 flex items-center gap-1.5 mt-0.5">
+                      <span><i class="fa-solid fa-user-tie text-amber-500"></i> ${escapeHtml(photo.teacher)}</span>
+                      <span>•</span>
+                      <span>${escapeHtml(photo.members)}</span>
+                    </p>
+                  </div>
+                  <span class="w-8 h-8 rounded-full bg-rose-50 text-rose-500 flex items-center justify-center shrink-0 group-hover:bg-rose-500 group-hover:text-white transition">
+                    <i class="fa-solid fa-heart text-xs"></i>
+                  </span>
+                </div>
+              </div>
+            </article>
+          `;
+        });
+
+        html += `
+            </div>
+          </div>
+        `;
+
+        section.innerHTML = html;
+        container.appendChild(section);
+      });
+    }
+
+    function renderCollectiveMessage() {
+      const cm = siteData.collectiveMessage;
+      document.getElementById('collective-title').textContent = cm.title;
+      document.getElementById('collective-body').textContent = cm.body;
+      document.getElementById('collective-signature').textContent = cm.signature;
+    }
+
+    /* ---------------------------------------------------------------------
+       4. MỞ LÁ THƯ KỶ NIỆM KHI BẤM VÀO ẢNH
+       --------------------------------------------------------------------- */
+    function openLetterModal(gradeId, photoId) {
+      const grade = siteData.grades.find(g => g.id === gradeId);
+      if (!grade) return;
+      const photo = grade.photos.find(p => p.id === photoId);
+      if (!photo) return;
+
+      document.getElementById('letter-grade-badge').textContent = `${grade.gradeLabel} • ${grade.memoryTheme}`;
+      document.getElementById('letter-title').textContent = photo.title;
+      const imgEl = document.getElementById('letter-photo');
+      imgEl.src = photo.imageUrl;
+      imgEl.onerror = () => { imgEl.src = 'https://placehold.co/1280x720/fef3c7/b45309?text=Ky+Niem+Thanh+Xuan'; };
+
+      document.getElementById('letter-class-name').textContent = photo.className;
+      document.getElementById('letter-teacher').textContent = photo.teacher;
+      document.getElementById('letter-year').textContent = photo.year;
+      document.getElementById('letter-members').textContent = photo.members;
+      document.getElementById('letter-message').textContent = photo.message;
+
+      // Gắn sự kiện nút Sửa trong lá thư
+      const editBtn = document.getElementById('letter-edit-btn');
+      editBtn.onclick = () => {
+        closeModal('letter-modal');
+        openPhotoEditor(gradeId, photoId);
+      };
+
+      openModal('letter-modal');
+    }
+
+    /* ---------------------------------------------------------------------
+       5. CHỈNH SỬA ẢNH TRÊN DÂY TREO / THÊM ẢNH / HERO / LỜI NHẮN TẬP THỂ
+       --------------------------------------------------------------------- */
+    function openPhotoEditor(gradeId, photoId) {
+      const grade = siteData.grades.find(g => g.id === gradeId);
+      if (!grade) return;
+      const photo = grade.photos.find(p => p.id === photoId);
+      if (!photo) return;
+
+      document.getElementById('photo-editor-heading').innerHTML =
+        '<i class="fa-solid fa-image text-rose-500"></i><span>Chỉnh Sửa Khung Ảnh & Lá Thư</span>';
+      document.getElementById('edit-grade-id').value = gradeId;
+      document.getElementById('edit-photo-id').value = photoId;
+      document.getElementById('edit-photo-url').value = photo.imageUrl;
+      document.getElementById('edit-photo-preview').src = photo.imageUrl;
+      document.getElementById('edit-class-name').value = photo.className;
+      document.getElementById('edit-photo-title').value = photo.title;
+      document.getElementById('edit-teacher').value = photo.teacher;
+      document.getElementById('edit-year').value = photo.year;
+      document.getElementById('edit-members').value = photo.members;
+      document.getElementById('edit-message').value = photo.message;
+
+      document.getElementById('delete-photo-btn').classList.remove('hidden');
+      openModal('photo-editor-modal');
+    }
+
+    function openAddPhotoModal(gradeId) {
+      const grade = siteData.grades.find(g => g.id === gradeId);
+      if (!grade) return;
+
+      const defaultClass = gradeId === 'grade-10' ? 'Lớp 10A1' : gradeId === 'grade-11' ? 'Lớp 11A1' : 'Lớp 12A1';
+      const sampleImg = 'https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1280&q=80';
+
+      document.getElementById('photo-editor-heading').innerHTML =
+        `<i class="fa-solid fa-plus-circle text-emerald-500"></i><span>Thêm Ảnh Mới Vào ${grade.gradeLabel}</span>`;
+      document.getElementById('edit-grade-id').value = gradeId;
+      document.getElementById('edit-photo-id').value = 'NEW';
+      document.getElementById('edit-photo-url').value = sampleImg;
+      document.getElementById('edit-photo-preview').src = sampleImg;
+      document.getElementById('edit-class-name').value = defaultClass;
+      document.getElementById('edit-photo-title').value = '';
+      document.getElementById('edit-teacher').value = 'Cô Nguyễn Thị Lan';
+      document.getElementById('edit-year').value = '2023 - 2026';
+      document.getElementById('edit-members').value = '42 thành viên';
+      document.getElementById('edit-message').value = '';
+
+      document.getElementById('delete-photo-btn').classList.add('hidden');
+      openModal('photo-editor-modal');
+    }
+
+    function savePhotoEdit(e) {
+      e.preventDefault();
+      const gradeId = document.getElementById('edit-grade-id').value;
+      const photoId = document.getElementById('edit-photo-id').value;
+      const grade = siteData.grades.find(g => g.id === gradeId);
+      if (!grade) return;
+
+      const updatedFields = {
+        imageUrl: document.getElementById('edit-photo-url').value.trim() || 'https://placehold.co/1280x720/fde68a/92400e?text=Ky+Niem+Lop',
+        className: document.getElementById('edit-class-name').value.trim(),
+        title: document.getElementById('edit-photo-title').value.trim(),
+        teacher: document.getElementById('edit-teacher').value.trim(),
+        year: document.getElementById('edit-year').value.trim(),
+        members: document.getElementById('edit-members').value.trim(),
+        message: document.getElementById('edit-message').value.trim()
+      };
+
+      if (photoId === 'NEW') {
+        grade.photos.push({
+          id: 'p-' + Date.now(),
+          ...updatedFields
+        });
+      } else {
+        const idx = grade.photos.findIndex(p => p.id === photoId);
+        if (idx !== -1) {
+          grade.photos[idx] = { ...grade.photos[idx], ...updatedFields };
+        }
+      }
+
+      saveSiteData(true);
+      renderGrades();
+      closeModal('photo-editor-modal');
+    }
+
+    function deleteCurrentPhoto() {
+      const gradeId = document.getElementById('edit-grade-id').value;
+      const photoId = document.getElementById('edit-photo-id').value;
+      const grade = siteData.grades.find(g => g.id === gradeId);
+      if (!grade) return;
+
+      if (grade.photos.length <= 1) {
+        showToast('Mỗi dây treo cần giữ lại ít nhất 1 bức ảnh kỷ niệm nhé!', 'error');
+        return;
+      }
+
+      grade.photos = grade.photos.filter(p => p.id !== photoId);
+      saveSiteData(true);
+      renderGrades();
+      closeModal('photo-editor-modal');
+    }
+
+    /* Chỉnh sửa Hero */
+    function openHeroEditor() {
+      const h = siteData.hero;
+      document.getElementById('edit-hero-url').value = h.bgUrl;
+      document.getElementById('edit-hero-preview').src = h.bgUrl;
+      document.getElementById('edit-hero-tag').value = h.tag;
+      document.getElementById('edit-hero-title').value = h.title;
+      document.getElementById('edit-hero-subtitle').value = h.subtitle;
+      openModal('hero-editor-modal');
+    }
+
+    function saveHeroEdit(e) {
+      e.preventDefault();
+      siteData.hero = {
+        bgUrl: document.getElementById('edit-hero-url').value.trim() || DEFAULT_SITE_DATA.hero.bgUrl,
+        tag: document.getElementById('edit-hero-tag').value.trim(),
+        title: document.getElementById('edit-hero-title').value.trim(),
+        subtitle: document.getElementById('edit-hero-subtitle').value.trim()
+      };
+      saveSiteData(true);
+      renderHero();
+      closeModal('hero-editor-modal');
+    }
+
+    /* Chỉnh sửa Lời Nhắn Tập Thể Lớp */
+    function openCollectiveMessageEditor() {
+      const cm = siteData.collectiveMessage;
+      document.getElementById('edit-collective-title').value = cm.title;
+      document.getElementById('edit-collective-body').value = cm.body;
+      document.getElementById('edit-collective-sign').value = cm.signature;
+      openModal('collective-editor-modal');
+    }
+
+    function saveCollectiveMessage(e) {
+      e.preventDefault();
+      siteData.collectiveMessage = {
+        title: document.getElementById('edit-collective-title').value.trim(),
+        body: document.getElementById('edit-collective-body').value.trim(),
+        signature: document.getElementById('edit-collective-sign').value.trim()
+      };
+      saveSiteData(true);
+      renderCollectiveMessage();
+      closeModal('collective-editor-modal');
+    }
+
+    /* Tải file ảnh từ máy tính & tự động nén nhẹ để lưu mượt vào localStorage */
+    function handleFileUpload(event, inputUrlId, previewImgId) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const img = new Image();
+        img.onload = function() {
+          // Nén kích thước tối đa chiều ngang 1280px giữ tỷ lệ 16:9 sắc nét và nhẹ dung lượng localStorage
+          const canvas = document.createElement('canvas');
+          const maxWidth = 1280;
+          let width = img.width;
+          let height = img.height;
+
+          if (width > maxWidth) {
+            height = Math.round((height * maxWidth) / width);
+            width = maxWidth;
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, width, height);
+
+          const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.82);
+          document.getElementById(inputUrlId).value = compressedDataUrl;
+          document.getElementById(previewImgId).src = compressedDataUrl;
+          showToast('Đã tải ảnh lên thành công! Nhớ bấm Lưu nhé.', 'info');
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    /* Khôi phục mẫu gốc (dùng modal/toast xác nhận không dùng confirm()) */
+    let resetConfirmPending = false;
+    function resetDefaultDataConfirm() {
+      if (!resetConfirmPending) {
+        resetConfirmPending = true;
+        showToast('Bấm lại nút "Khôi phục mẫu gốc" trong 4 giây để xác nhận đặt lại!', 'info');
+        setTimeout(() => { resetConfirmPending = false; }, 4000);
+        return;
+      }
+      resetConfirmPending = false;
+      siteData = JSON.parse(JSON.stringify(DEFAULT_SITE_DATA));
+      saveSiteData(false);
+      renderAll();
+      showToast('Đã khôi phục toàn bộ dữ liệu mẫu ban đầu!', 'success');
+    }
+
+    /* ---------------------------------------------------------------------
+       6. HIỆU ỨNG STICKER BÔNG HOA HỒNG RƠI XUYÊN SUỐT TRANG WEB
+       --------------------------------------------------------------------- */
+    function initFallingRoses() {
+      const container = document.getElementById('rose-petal-container');
+      if (!container) return;
+
+      const roseStickers = ['🌹', '🥀', '🌸', '🌺', '🌷'];
+      const totalRoses = 24;
+
+      for (let i = 0; i < totalRoses; i++) {
+        const span = document.createElement('span');
+        span.className = 'falling-rose';
+        // Ưu tiên nhiều bông hoa hồng 🌹
+        span.textContent = i % 3 === 0 ? roseStickers[i % roseStickers.length] : '🌹';
+
+        const leftPos = Math.random() * 98;
+        const size = 16 + Math.random() * 16; // 16px - 32px
+        const duration = 9 + Math.random() * 11; // 9s - 20s
+        const delay = -(Math.random() * 18);
+
+        span.style.left = `${leftPos}vw`;
+        span.style.fontSize = `${size}px`;
+        span.style.animationDuration = `${duration}s`;
+        span.style.animationDelay = `${delay}s`;
+
+        container.appendChild(span);
+      }
+    }
+
+    /* ---------------------------------------------------------------------
+       7. NHẠC NỀN THANH XUÂN (WEB AUDIO API PIANO DU DƯƠNG KHÔNG BAO GIỜ LỖI)
+       --------------------------------------------------------------------- */
+    let audioCtx = null;
+    let isMusicPlaying = false;
+    let musicTimer = null;
+    let currentTrackIdx = 0;
+    let noteStep = 0;
+
+    // 2 giai điệu thanh xuân tuổi học trò nhẹ nhàng, trong trẻo
+    const YOUTH_TRACKS = [
+      {
+        name: 'Giai Điệu Thanh Xuân',
+        tempoMs: 460,
+        // Hợp âm & giai điệu Canon / Tuổi học trò tươi sáng (C - G - Am - Em - F - C - F - G)
+        notes: [
+          523.25, 659.25, 783.99, 659.25, // C5 E5 G5 E5
+          493.88, 587.33, 783.99, 587.33, // B4 D5 G5 D5
+          440.00, 523.25, 659.25, 523.25, // A4 C5 E5 C5
+          392.00, 493.88, 659.25, 493.88, // G4 B4 E5 B4
+          349.23, 440.00, 523.25, 659.25, // F4 A4 C5 E5
+          329.63, 392.00, 523.25, 659.25, // E4 G4 C5 E5
+          349.23, 440.00, 587.33, 698.46, // F4 A4 D5 F5
+          392.00, 493.88, 587.33, 783.99  // G4 B4 D5 G5
+        ]
+      },
+      {
+        name: 'Lưu Bút Mùa Hạ',
+        tempoMs: 420,
+        notes: [
+          659.25, 587.33, 523.25, 587.33, 659.25, 659.25, 659.25, 0,
+          587.33, 587.33, 587.33, 0,      659.25, 783.99, 783.99, 0,
+          659.25, 587.33, 523.25, 587.33, 659.25, 659.25, 659.25, 523.25,
+          587.33, 587.33, 659.25, 587.33, 523.25, 0,      392.00, 0
+        ]
+      }
+    ];
+
+    function playPianoNote(freq) {
+      if (!freq || !audioCtx) return;
+      const now = audioCtx.currentTime;
+
+      const osc = audioCtx.createOscillator();
+      const subOsc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, now);
+
+      // Thêm họa âm nhẹ tạo cảm giác tiếng đàn piano / hộp nhạc ấm áp
+      subOsc.type = 'triangle';
+      subOsc.frequency.setValueAtTime(freq * 2, now);
+
+      const subGain = audioCtx.createGain();
+      subGain.gain.setValueAtTime(0.03, now);
+
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.exponentialRampToValueAtTime(0.11, now + 0.04);
+      gain.gain.exponentialRampToValueAtTime(0.0008, now + 1.35);
+
+      osc.connect(gain);
+      subOsc.connect(subGain);
+      subGain.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start(now);
+      subOsc.start(now);
+      osc.stop(now + 1.4);
+      subOsc.stop(now + 1.4);
+    }
+
+    function startMusicLoop() {
+      if (musicTimer) clearInterval(musicTimer);
+      const track = YOUTH_TRACKS[currentTrackIdx];
+      document.getElementById('music-track-name').textContent = track.name;
+
+      musicTimer = setInterval(() => {
+        if (!isMusicPlaying) return;
+        const freq = track.notes[noteStep % track.notes.length];
+        playPianoNote(freq);
+        noteStep++;
+      }, track.tempoMs);
+    }
+
+    function toggleYouthMusic() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContext();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      isMusicPlaying = !isMusicPlaying;
+      const icon = document.getElementById('music-icon');
+      const status = document.getElementById('music-status-text');
+      const disc = document.getElementById('music-disc');
+
+      if (isMusicPlaying) {
+        icon.className = 'fa-solid fa-pause';
+        status.textContent = 'Đang phát du dương...';
+        disc.classList.add('animate-spin');
+        startMusicLoop();
+      } else {
+        icon.className = 'fa-solid fa-play';
+        status.textContent = 'Đang tạm dừng';
+        disc.classList.remove('animate-spin');
+        if (musicTimer) clearInterval(musicTimer);
+      }
+    }
+
+    function switchYouthTrack() {
+      currentTrackIdx = (currentTrackIdx + 1) % YOUTH_TRACKS.length;
+      noteStep = 0;
+      document.getElementById('music-track-name').textContent = YOUTH_TRACKS[currentTrackIdx].name;
+      if (isMusicPlaying) {
+        startMusicLoop();
+      } else {
+        toggleYouthMusic();
+      }
+    }
+
+    /* ---------------------------------------------------------------------
+       8. TIỆN ÍCH MODAL & THÔNG BÁO TOAST
+       --------------------------------------------------------------------- */
+    function openModal(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.remove('hidden');
+      el.classList.add('flex');
+    }
+
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.add('hidden');
+      el.classList.remove('flex');
+    }
+
+    function closeModalOnBackdrop(event, id) {
+      if (event.target.id === id) {
+        closeModal(id);
+      }
+    }
+
+    function showToast(message, type = 'success') {
+      const box = document.getElementById('toast-box');
+      if (!box) return;
+
+      const colors = {
+        success: 'bg-emerald-600 text-white border-emerald-400',
+        error: 'bg-rose-600 text-white border-rose-400',
+        info: 'bg-amber-500 text-white border-amber-300'
+      };
+      const icons = {
+        success: 'fa-circle-check',
+        error: 'fa-circle-exclamation',
+        info: 'fa-sparkles'
+      };
+
+      const toast = document.createElement('div');
+      toast.className = `pointer-events-auto px-4 py-3 rounded-2xl shadow-xl border ${colors[type] || colors.success} text-xs sm:text-sm font-bold flex items-center gap-2.5 transition-all duration-300 transform translate-x-0`;
+      toast.innerHTML = `<i class="fa-solid ${icons[type] || icons.success}"></i><span>${escapeHtml(message)}</span>`;
+
+      box.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(20px)';
+        setTimeout(() => toast.remove(), 300);
+      }, 3400);
+    }
+
+    function escapeHtml(str) {
+      if (str === null || str === undefined) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    /* ---------------------------------------------------------------------
+       9. KHỞI CHẠY KHI TẢI XONG TRANG
+       --------------------------------------------------------------------- */
+    window.addEventListener('DOMContentLoaded', () => {
+      initUsers();
+      loadSiteData();
+      initFallingRoses();
+
+      // Kiểm tra nếu người dùng đã đăng nhập từ trước thì vào thẳng trang trực tiếp
+      try {
+        const savedSession = localStorage.getItem(STORAGE_KEYS.SESSION);
+        if (savedSession) {
+          const user = JSON.parse(savedSession);
+          if (user && user.username) {
+            enterMainApp(user);
+          }
+        }
+      } catch (e) {
+        console.warn('Không thể khôi phục phiên đăng nhập:', e);
+      }
+    });
+  </script>
+</body>
+</html>
